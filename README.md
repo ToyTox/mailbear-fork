@@ -72,6 +72,9 @@ curl \
     -d '{"name":"Joe","email":"joe@example.com", "subject": "Some subject", "content": "Maecenas faucibus mollis interdum. Sed posuere consectetur est at lobortis."}'
 ```
 
+## Notes
+
+By default, we use FormSubmission struct field H0n3y to prevent spam
 
 
 ## Examples
@@ -204,7 +207,7 @@ export default {
 <form id="contact-form" class="pure-form">
             
     <div class="meta">
-        <input type="text" name="name" placeholder="Naam">
+        <input type="text" name="name" placeholder="Name">
         
         <input type="email" name="email" placeholder="Email">
 
