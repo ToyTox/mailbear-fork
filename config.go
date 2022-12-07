@@ -81,6 +81,7 @@ func (config *Config) Validate() error {
 // Form represents the form in the config
 type Form struct {
 	HumanReadableName string   `yaml:"-"` // this is set while parsing the whole config file based on the key of the dict
+	HoneyPot          bool     `yaml:"honeypot"`
 	Key               string   `yaml:"key"`
 	AllowedDomains    []string `yaml:"allowed_domains"`
 	ToEmail           []string `yaml:"to_email"`

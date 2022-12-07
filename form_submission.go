@@ -8,7 +8,7 @@ import (
 
 // FormSubmission represent a submitted form
 type FormSubmission struct {
-    H0n3y   string `json:"h0n3y" from:"h0n3y"`
+    Honey   string `json:"h0n3y" from:"h0n3y"`
 	Name    string `json:"name" form:"name"`
 	Email   string `json:"email" form:"email"`
 	Subject string `json:"subject" form:"subject"`
@@ -18,9 +18,6 @@ type FormSubmission struct {
 
 // Validate validates all fields of a form submission.
 func (f *FormSubmission) Validate() error {
-    if f.H0n3y != "" {
-        return fmt.Errorf("error")
-    }
 	if f.Name == "" {
 		// name is optional
 	}

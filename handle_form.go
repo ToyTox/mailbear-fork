@@ -32,6 +32,11 @@ func (m *MailBear) handleForm(c echo.Context) error {
 		return c.JSON(http.StatusForbidden, mailbearRespone("you're not allowed to send from this domain"))
 	}
 
+    // check if honeypot true
+	if form.HoneyPot && data.Honey != "" {
+        return c.JSON(http.StatusForbidden, mailbearRespone("incorrect form data"))
+	}
+
 	// send the mail
 	err := m.SendMail(data)
 	if err != nil {

@@ -58,6 +58,22 @@ forms:
             - recepient@example.com
 ```
 
+## Notes
+
+If you want to prevent spam, you can add honeypot in `config.yml` and add in your form `input name="H0n3y"`, as shown in jQuery example.
+
+```yaml
+forms:
+    some-form-name:
+        key: some-random-key
+        honeypot: true
+        allowed_domains:
+            - localhost:8080
+            - example.com
+        to_email:
+            - recepient@example.com
+```
+
 
 ## Usage
 
@@ -71,10 +87,6 @@ curl \
     -H 'Origin: http://localhost:8080' \
     -d '{"name":"Joe","email":"joe@example.com", "subject": "Some subject", "content": "Maecenas faucibus mollis interdum. Sed posuere consectetur est at lobortis."}'
 ```
-
-## Notes
-
-By default, we use FormSubmission struct field H0n3y to prevent spam
 
 
 ## Examples
@@ -207,6 +219,8 @@ export default {
 <form id="contact-form" class="pure-form">
             
     <div class="meta">
+        <input type="text" name="h0n3y" placeholder="h0n3y">
+        
         <input type="text" name="name" placeholder="Name">
         
         <input type="email" name="email" placeholder="Email">
